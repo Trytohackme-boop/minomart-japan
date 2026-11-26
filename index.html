@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MinoMart Japan – Discover Something Different</title>
+<meta name="description" content="MinoMart Japan: smart everyday products for kitchen, home, bathroom, travel and stationery.">
+<style>
+:root{--bg:#fbfbfd;--surface:#fff;--text:#0f1b33;--muted:#62708a;--red:#D92736;--navy:#174B8B;--line:#e6eaf2;--glow:rgba(217,39,54,.14);--glow2:rgba(23,75,139,.16);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a111f;--surface:#121c31;--text:#f1f4fa;--muted:#9eabc3;--line:#223152;--glow:rgba(217,39,54,.22);--glow2:rgba(70,130,220,.22);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a111f;--surface:#121c31;--text:#f1f4fa;--muted:#9eabc3;--line:#223152;--glow:rgba(217,39,54,.22);--glow2:rgba(70,130,220,.22);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter","Noto Sans JP","Noto Sans Devanagari","Segoe UI",system-ui,sans-serif;line-height:1.65}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem;letter-spacing:-.02em;color:var(--text);text-decoration:none}
+.logo b{color:var(--red)}
+.menu{display:flex;gap:26px}
+.menu a{color:var(--muted);text-decoration:none;font-size:.93rem;font-weight:500}
+.menu a:hover{color:var(--red)}
+.lang{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:3px}
+.lang button{border:0;background:none;color:var(--muted);font:600 .78rem inherit;font-family:inherit;padding:6px 11px;border-radius:99px;cursor:pointer}
+.lang button.on{background:var(--red);color:#fff}
+@media(max-width:760px){.menu{display:none}}
+.hero{position:relative;overflow:hidden;padding:96px 0 84px}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);z-index:0}
+.hero::before{width:420px;height:420px;background:var(--glow);top:-120px;right:-80px}
+.hero::after{width:380px;height:380px;background:var(--glow2);bottom:-160px;left:-100px}
+.hero .wrap{position:relative;z-index:1}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);font-size:.82rem;font-weight:600;padding:6px 14px;border-radius:99px;margin-bottom:22px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--red)}
+h1{font-size:clamp(2.4rem,7vw,4.6rem);line-height:1.05;margin:0 0 20px;letter-spacing:-.035em;max-width:760px}
+h1 span{background:linear-gradient(90deg,var(--red),var(--navy));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:560px;color:var(--muted);font-size:1.12rem;margin:0 0 32px}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:14px 28px;border-radius:14px;box-shadow:0 10px 24px -10px var(--red)}
+.btn.alt{background:var(--surface);color:var(--text);border:1px solid var(--line);box-shadow:none;margin-left:8px}
+section{padding:72px 0}
+.eyebrow{color:var(--red);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+h2{font-size:clamp(1.8rem,4.5vw,2.7rem);margin:0 0 10px;letter-spacing:-.025em;line-height:1.15}
+.sub{color:var(--muted);margin:0 0 36px;max-width:560px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px var(--navy)}
+.ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;background:linear-gradient(135deg,var(--glow),var(--glow2));margin-bottom:16px}
+.card h3{margin:0 0 6px;font-size:1.08rem}
+.card p{margin:0;color:var(--muted);font-size:.93rem}
+.dark{background:linear-gradient(135deg,#0f3260,#174B8B);color:#fff;border-radius:32px;padding:56px 32px;margin:0 20px}
+.dark .sub{color:#c9d8ee}
+.dark .card{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)}
+.dark .card p{color:#c9d8ee}
+.dark .eyebrow{color:#ff8c96}
+.contact{text-align:center}
+.contact .sub{margin:0 auto 24px}
+.ci{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.ci .btn{margin:0}
+.cat{cursor:pointer}.more{display:inline-block;margin-top:14px;color:var(--red);font-weight:600;font-size:.88rem}
+#m{position:fixed;inset:0;z-index:20;display:none;background:rgba(8,14,28,.55);backdrop-filter:blur(4px);align-items:flex-end;justify-content:center}
+#m.open{display:flex}
+.sheet{background:var(--bg);width:100%;max-width:760px;max-height:88%;overflow:auto;border-radius:26px 26px 0 0;padding:24px 20px calc(24px + env(safe-area-inset-bottom,0px));border:1px solid var(--line)}
+@media(min-width:760px){#m{align-items:center}.sheet{border-radius:26px;max-height:80%}}
+.sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:12px}
+.sh h3{margin:0;font-size:1.35rem}
+.sh button{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:99px;padding:8px 16px;font:600 .85rem inherit;font-family:inherit;cursor:pointer}
+.items{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
+.item h4{margin:0 0 6px;font-size:1rem}
+.pic{height:96px;border-radius:14px;margin-bottom:12px;display:grid;place-items:center;font-size:3rem;background:linear-gradient(135deg,var(--glow),var(--glow2))}
+.price{font-size:1.4rem;font-weight:800;color:var(--red);margin-bottom:10px}
+.ask{color:var(--text);font-weight:600;font-size:.85rem;text-decoration:underline}
+footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);font-size:.88rem}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top" aria-label="MinoMart Japan"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#174B8B"/><circle cx="20" cy="15" r="8" fill="#D92736"/><path d="M5 28q3.75-5 7.5 0t7.5 0 7.5 0 7.5 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M5 34q3.75-5 7.5 0t7.5 0 7.5 0 7.5 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".6"/></svg><span>Mino<b>Mart</b></span></a>
+<div class="menu"><a href="#categories" data-t="n1"></a><a href="#why" data-t="n2"></a><a href="#about" data-t="n3"></a><a href="#contact" data-t="n4"></a></div>
+<div class="lang" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="ja">日本語</button><button data-l="ne">नेपाली</button></div>
+</nav></div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div class="pill"><i></i><span data-t="tag"></span></div>
+<h1 data-t="h1" data-html></h1>
+<p data-t="hp"></p>
+<a class="btn" href="#categories" data-t="b1"></a><a class="btn alt" href="#contact" data-t="b2"></a>
+</div></div>
+
+<section id="categories"><div class="wrap">
+<div class="eyebrow" data-t="e1"></div>
+<h2 data-t="c0"></h2><p class="sub" data-t="cs"></p>
+<div class="grid">
+<div class="card"><div class="ic">🍱</div><h3 data-t="c1"></h3><p data-t="d1"></p></div>
+<div class="card"><div class="ic">🧼</div><h3 data-t="c2"></h3><p data-t="d2"></p></div>
+<div class="card"><div class="ic">📦</div><h3 data-t="c3"></h3><p data-t="d3"></p></div>
+<div class="card"><div class="ic">🛁</div><h3 data-t="c4"></h3><p data-t="d4"></p></div>
+<div class="card"><div class="ic">🧳</div><h3 data-t="c5"></h3><p data-t="d5"></p></div>
+<div class="card"><div class="ic">✏️</div><h3 data-t="c6"></h3><p data-t="d6"></p></div>
+<div class="card"><div class="ic">💡</div><h3 data-t="c7"></h3><p data-t="d7"></p></div>
+</div></div></section>
+
+<section id="why"><div class="dark">
+<div class="wrap">
+<div class="eyebrow" data-t="e2"></div>
+<h2 data-t="w0"></h2><p class="sub" data-t="ws"></p>
+<div class="grid">
+<div class="card"><h3 data-t="w1"></h3><p data-t="x1"></p></div>
+<div class="card"><h3 data-t="w2"></h3><p data-t="x2"></p></div>
+<div class="card"><h3 data-t="w3"></h3><p data-t="x3"></p></div>
+</div></div></div></section>
+
+<section id="about"><div class="wrap">
+<div class="eyebrow" data-t="e3"></div>
+<h2 data-t="a0"></h2><p class="sub" style="max-width:680px;margin:0" data-t="at"></p>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<div class="eyebrow" data-t="e4"></div>
+<h2 data-t="t0"></h2>
+<p class="sub" data-t="ts"></p>
+<p><strong>Pramod Giri</strong> · MinoMart Japan</p>
+<div class="ci"><a class="btn" href="tel:09038574534">📞 090-3857-4534</a><a class="btn alt" href="mailto:pramodgiri763@gmail.com">✉️ pramodgiri763@gmail.com</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 MinoMart Japan · Pramod Giri · 090-3857-4534 · pramodgiri763@gmail.com</div></footer>
+
+<div id='m' aria-modal='true' role='dialog'><div class='sheet'><div class='sh'><h3 id='mt'></h3><button id='mx' type='button'></button></div><div class='items' id='mi'></div></div></div>
+<script>
+var T={
+en:{n1:"Categories",n2:"Why us",n3:"About",n4:"Contact",tag:"Online shop for Japan",h1:"Discover <span>Something Different.</span>",hp:"Smart, useful and well-chosen everyday products for your kitchen, home, bathroom and travels, for everyone living in or visiting Japan.",b1:"Browse categories",b2:"Get in touch",e1:"Shop",c0:"Shop by category",cs:"Everything you need for daily life, in seven simple collections.",c1:"Kitchen & Lunch",d1:"Lunch boxes, cookware and kitchen helpers.",c2:"Cleaning Products",d2:"Keep every corner of your home fresh.",c3:"Home & Storage",d3:"Organise small spaces the smart way.",c4:"Bathroom Accessories",d4:"Practical details for a tidy bathroom.",c5:"Travel & Daily Essentials",d5:"Compact items for trips and busy days.",c6:"Stationery",d6:"Pens, notebooks and desk favourites.",c7:"Useful Gadgets",d7:"Clever little tools that make life easier.",e2:"Why us",w0:"Why MinoMart",ws:"Made for Japanese households and international residents alike.",w1:"Carefully chosen",x1:"Products picked for usefulness, quality and value.",w2:"For everyone",x2:"Friendly to Japanese customers, foreign residents and international shoppers.",w3:"Something different",x3:"Items you won’t find in every ordinary store.",e3:"About",a0:"About us",at:"MinoMart is an online shop in Japan built around one idea: everyday things should be practical, tidy and a little more interesting. We bring together useful products so you can find what you need in one place.",e4:"Contact",t0:"Get in touch",ts:"Questions about products or the shop? We’d love to hear from you."},
+ja:{n1:"カテゴリー",n2:"選ばれる理由",n3:"私たちについて",n4:"お問い合わせ",tag:"日本のオンラインショップ",h1:"<span>ちょっと違う</span>を、見つけよう。",hp:"キッチン、お家、バスルーム、旅行に。日本に住む方も訪れる方も使える、便利でセンスの良い日用品を厳選しました。",b1:"カテゴリーを見る",b2:"お問い合わせ",e1:"ショップ",c0:"カテゴリーから探す",cs:"毎日の暮らしに必要なものを、7つのカテゴリーにまとめました。",c1:"キッチン・お弁当",d1:"お弁当箱、調理器具、キッチン便利グッズ。",c2:"お掃除用品",d2:"家のすみずみまで清潔に。",c3:"ホーム・収納",d3:"小さなスペースもスマートに整理。",c4:"バスルーム用品",d4:"すっきり使いやすいバスルームへ。",c5:"旅行・日用品",d5:"旅行や忙しい日に便利なコンパクトアイテム。",c6:"文房具",d6:"ペン、ノート、デスク周りの定番。",c7:"便利ガジェット",d7:"暮らしをラクにする小さな工夫アイテム。",e2:"選ばれる理由",w0:"MinoMartが選ばれる理由",ws:"日本の家庭にも、海外から来た方にも。",w1:"厳選した品揃え",x1:"便利さ・品質・価格のバランスで選びました。",w2:"みんなにやさしい",x2:"日本の方、在住外国人、海外のお客様にも使いやすいお店です。",w3:"ひと味違う",x3:"普通のお店ではなかなか見つからないアイテムも。",e3:"私たちについて",a0:"MinoMartについて",at:"MinoMartは、日用品をもっと実用的で、すっきりして、少し楽しくしたいという想いから生まれた日本のオンラインショップです。必要なものがひとつの場所で見つかります。",e4:"お問い合わせ",t0:"お気軽にご連絡ください",ts:"商品やお店についてのご質問をお待ちしています。"},
+ne:{n1:"श्रेणीहरू",n2:"हामी किन",n3:"हाम्रो बारेमा",n4:"सम्पर्क",tag:"जापानको अनलाइन पसल",h1:"केही <span>फरक</span> पत्ता लगाउनुहोस्।",hp:"तपाईंको भान्सा, घर, बाथरुम र यात्राका लागि उपयोगी र राम्ररी छानिएका दैनिक सामान, जापानमा बस्ने वा घुम्न आउने सबैका लागि।",b1:"श्रेणीहरू हेर्नुहोस्",b2:"सम्पर्क गर्नुहोस्",e1:"पसल",c0:"श्रेणी अनुसार खोज्नुहोस्",cs:"दैनिक जीवनका लागि चाहिने सबै कुरा, सात सरल संग्रहमा।",c1:"किचन र लन्च",d1:"टिफिन बक्स, भाँडाकुँडा र भान्साका सहायक सामान।",c2:"सफाइका सामान",d2:"घरको हरेक कुना सफा राख्नुहोस्।",c3:"घर र भण्डारण",d3:"सानो ठाउँलाई स्मार्ट तरिकाले मिलाउनुहोस्।",c4:"बाथरुम सामान",d4:"सफा बाथरुमका लागि व्यावहारिक सामान।",c5:"यात्रा र दैनिक आवश्यकता",d5:"यात्रा र व्यस्त दिनका लागि सानो आकारका सामान।",c6:"स्टेसनरी",d6:"कलम, कपी र डेस्कका मनपर्ने सामान।",c7:"उपयोगी ग्याजेट",d7:"जीवन सजिलो बनाउने चलाख साना औजार।",e2:"हामी किन",w0:"किन MinoMart",ws:"जापानी परिवार र विदेशी बासिन्दा दुवैका लागि।",w1:"होसियारीसाथ छानिएको",x1:"उपयोगिता, गुणस्तर र मूल्य हेरेर छानिएका सामान।",w2:"सबैका लागि",x2:"जापानी ग्राहक, विदेशी बासिन्दा र अन्तर्राष्ट्रिय खरिदकर्ता सबैलाई सजिलो।",w3:"केही फरक",x3:"साधारण पसलमा नपाइने सामानहरू।",e3:"हाम्रो बारेमा",a0:"हाम्रो बारेमा",at:"MinoMart जापानको एक अनलाइन पसल हो, जसको विचार सरल छ: दैनिक सामान व्यावहारिक, व्यवस्थित र अलि रोचक हुनुपर्छ। तपाईंलाई चाहिने सामान एकै ठाउँमा भेट्न सक्नुहुन्छ।",e4:"सम्पर्क",t0:"हामीसँग सम्पर्क गर्नुहोस्",ts:"सामान वा पसलबारे प्रश्न छ? हामी सुन्न चाहन्छौं।"}
+};
+function setLang(l){
+ var d=T[l]||T.en;
+ document.documentElement.lang=l;
+ document.querySelectorAll("[data-t]").forEach(function(e){
+  var v=d[e.getAttribute("data-t")];
+  if(v===undefined)return;
+  if(e.hasAttribute("data-html"))e.innerHTML=v;else e.textContent=v;
+ });
+ document.querySelectorAll(".lang button").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-l")===l)});
+ try{localStorage.setItem("mm-lang",l)}catch(e){}
+ if(window.render)render();
+}
+document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){setLang(b.getAttribute("data-l"))})});
+var s="en";
+try{s=localStorage.getItem("mm-lang")||""}catch(e){}
+if(!T[s]){var n=(navigator.language||"en").slice(0,2);s=T[n]?n:"en"}
+setLang(s);
+</script>
+<script>
+/* Sample items: replace with real products and prices. Each row: [English, Japanese, Nepali, price in yen] */
+var I=[
+[['Lunch box','弁当箱','टिफिन बक्स',680],['Silicone spatula set','シリコンヘラセット','सिलिकन स्प्याचुला सेट',480],['Reusable food wrap','繰り返し使えるフードラップ','पुनः प्रयोग हुने फुड र्‍याप',390],['Bento bag','お弁当袋','टिफिन झोला',550],['Chopsticks set with case','お箸セット（ケース付き）','केससहितको चपस्टिक सेट',330],['Stainless water bottle','ステンレスボトル','स्टिल पानी बोतल',1280],['Cutting board','まな板','काट्ने पाटा',780],['Measuring spoon set','計量スプーンセット','नाप्ने चम्चा सेट',220]],
+[['Multi-surface cleaner spray','マルチクリーナースプレー','मल्टी-सर्फेस क्लिनर स्प्रे',350],['Sponge 5-pack','スポンジ5個入り','स्पन्ज ५ वटाको प्याक',280],['Microfibre cloth set','マイクロファイバークロスセット','माइक्रोफाइबर कपडा सेट',420],['Toilet brush','トイレブラシ','शौचालय ब्रस',480],['Laundry detergent','洗濯用洗剤','लुगा धुने डिटर्जेन्ट',450],['Dish soap','食器用洗剤','भाँडा माझ्ने साबुन',198],['Floor wiper sheets (30)','フロアワイパーシート30枚','भुइँ पुछ्ने सिट ३०',398],['Rubber gloves','ゴム手袋','रबरका पन्जा',330]],
+[['Stackable storage box','積み重ね収納ボックス','माथि-माथि मिल्ने भण्डारण बक्स',790],['Hanging organiser','吊り下げ収納','झुण्ड्याउने अर्गनाइजर',650],['Drawer dividers','引き出し仕切り','दराज डिभाइडर',520],['Clothes hangers (10)','ハンガー10本','कपडा ह्याङ्गर १०',550],['Laundry basket','洗濯かご','लुगा राख्ने टोकरी',980],['Shoe rack','シューズラック','जुत्ता र्‍याक',1480],['Vacuum storage bags (5)','衣類圧縮袋5枚','भ्याकुम स्टोरेज ब्याग ५',680],['Over-door hook rack','ドアフック','ढोकामा झुण्ड्याउने हुक',420]],
+[['Soap dish','ソープディッシュ','साबुन राख्ने प्लेट',330],['Toothbrush holder','歯ブラシホルダー','टुथब्रस होल्डर',450],['Suction hook set','吸盤フックセット','सक्सन हुक सेट',380],['Bath towel','バスタオル','नुहाउने तौलिया',1280],['Shower caddy','シャワーラック','शावर र्‍याक',980],['Bath mat','バスマット','बाथ म्याट',880],['Pump bottles (3)','ポンプボトル3本','पम्प बोतल ३',440],['Bathroom slippers','バススリッパ','बाथरुम चप्पल',580]],
+[['Travel pouch set','トラベルポーチセット','यात्रा पाउच सेट',590],['Compact umbrella','折りたたみ傘','सानो छाता',980],['Travel bottle set','トラベルボトルセット','यात्रा बोतल सेट',440],['Luggage tag','ネームタグ','ब्याग ट्याग',330],['Neck pillow','ネックピロー','घाँटी तकिया',1180],['Packing cubes (3)','パッキングキューブ3個','प्याकिङ क्युब ३',880],['Passport holder','パスポートケース','पासपोर्ट होल्डर',780],['Mini towels (2)','ミニタオル2枚','सानो तौलिया २',330]],
+[['Gel pens 6-pack','ジェルペン6本セット','जेल कलम ६ वटा',360],['A5 notebook','A5ノート','A5 कपी',280],['Sticky notes set','付箋セット','स्टिकी नोट सेट',220],['Highlighters (5 colours)','蛍光ペン5色','हाइलाइटर ५ रङ',330],['Mechanical pencil','シャープペンシル','मेकानिकल पेन्सिल',220],['Scissors','はさみ','कैंची',330],['Washi tape set','マスキングテープセット','वाशी टेप सेट',440],['Clear file folders (5)','クリアファイル5枚','क्लियर फाइल ५',330]],
+[['Mini LED light','ミニLEDライト','मिनी LED बत्ती',750],['Cable organiser','ケーブルオーガナイザー','केबल अर्गनाइजर',340],['Phone stand','スマホスタンド','फोन स्ट्यान्ड',580],['USB-C cable 1 m','USB-Cケーブル1m','USB-C केबल १ मिटर',880],['Portable fan','携帯扇風機','पोर्टेबल पंखा',1480],['Digital kitchen timer','デジタルタイマー','डिजिटल टाइमर',880],['Power strip (3 outlets)','電源タップ3口','पावर स्ट्रिप ३ प्वाल',1280],['Lint remover','毛玉取り器','लिन्ट रिमुभर',580]]
+];
+var E=[['🍱','🥄','🧻','👜','🥢','🥤','🔪','🧂'],['🧴','🧽','🧼','🚽','🧺','🍽️','🧹','🧤'],['📦','🗂️','🗄️','👔','🧺','👟','🛍️','🪝'],['🧼','🪥','🪝','🛁','🚿','🟦','🧴','🩴'],['👝','☂️','🧴','🏷️','😴','🧳','🛂','🧣'],['🖊️','📓','📝','🖍️','✏️','✂️','🎀','📁'],['💡','🔌','📱','🔗','🌀','⏲️','⚡','🧶']];
+var U={en:{v:'View items',a:'Ask about this item',x:'Close'},ja:{v:'商品を見る',a:'この商品について問い合わせ',x:'閉じる'},ne:{v:'सामान हेर्नुहोस्',a:'यस सामानबारे सोध्नुहोस्',x:'बन्द गर्नुहोस्'}};
+var cur=-1;
+var cards=document.querySelectorAll('#categories .card');
+cards.forEach(function(c,i){c.classList.add('cat');c.tabIndex=0;c.setAttribute('role','button');var h=document.createElement('span');h.className='more';c.appendChild(h);c.addEventListener('click',function(){openM(i)});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openM(i)}})});
+function render(){
+ var l=document.documentElement.lang;if(!U[l])l='en';var u=U[l],k=l==='en'?0:l==='ja'?1:2;
+ document.querySelectorAll('.more').forEach(function(h){h.textContent=u.v+' →'});
+ document.getElementById('mx').textContent=u.x;
+ if(cur<0)return;
+ document.getElementById('mt').textContent=cards[cur].querySelector('h3').textContent;
+ var g=document.getElementById('mi');g.innerHTML='';
+ I[cur].forEach(function(it,ix){
+  var d=document.createElement('div');d.className='item';
+  var n=document.createElement('h4');n.textContent=it[k];
+  var p=document.createElement('div');p.className='price';p.textContent='¥'+it[3].toLocaleString('en-US');
+  var a=document.createElement('a');a.className='ask';a.href='mailto:pramodgiri763@gmail.com?subject='+encodeURIComponent(it[0]);a.textContent=u.a;
+  var pc=document.createElement('div');pc.className='pic';pc.setAttribute('aria-hidden','true');pc.textContent=E[cur][ix]||'🛍️';d.appendChild(pc);d.appendChild(n);d.appendChild(p);d.appendChild(a);g.appendChild(d);
+ });
+}
+function openM(i){cur=i;document.getElementById('m').classList.add('open');document.body.style.overflow='hidden';render()}
+function closeM(){cur=-1;document.getElementById('m').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('mx').addEventListener('click',closeM);
+document.getElementById('m').addEventListener('click',function(e){if(e.target===this)closeM()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM()});
+render();
+</script>
+</body>
+</html>
